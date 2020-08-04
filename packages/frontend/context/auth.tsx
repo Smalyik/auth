@@ -30,9 +30,10 @@ export const AuthProvider = ({ children }) => {
 			.then(({ data: me }) => {
 				console.log(me);
 				setUser(me);
+				redirectAfterLogin();
 			})
-			.catch(error => {
-				console.error(error);
+			.catch(e => {
+				console.error(e);
 				logout();
 			});
 	};
@@ -48,7 +49,6 @@ export const AuthProvider = ({ children }) => {
 		Cookies.set('token', token);
 		addBearerToken(token);
 		await updateUser();
-		redirectAfterLogin();
 	};
 
 	const redirectAfterLogin = () => {
