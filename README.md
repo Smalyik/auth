@@ -1,8 +1,8 @@
 ## Next + Adonis app
 
 # Setup
-rename .env.example to .env
-```bash
+1. rename .env.example to .env
+2. ```bash
 git clone https://github.com/Smalyik/auth.git
 cd auth
 docker-compose up
